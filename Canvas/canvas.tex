@@ -1,0 +1,114 @@
+\documentclass[10pt]{beamer}
+
+\input{/Users/daniel/Documents/LaTeX/beamer-style.tex}
+
+\title{Multimédia - 2\textsuperscript{e}}
+\subtitle{Introduction à Canvas}
+\date{\today}
+\author{Daniel Schreurs}
+\institute{Haute École de Province de Liège}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.eps}}
+
+
+\setbeamertemplate{frame footer}{\insertsectionhead}
+\begin{document}
+\maketitle
+
+\setbeamerfont{subsection in toc}{size=\small}
+\setbeamerfont{subsubsection in toc}{size=\normalsize}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+\setbeamertemplate{subsubsection in toc}[subsubsections numbered]
+\begin{frame}[allowframebreaks]{Table des matières du chapitre}
+    \tableofcontents[subsectionstyle=show/show/hide,subsubsectionstyle=show/show/hide,]
+\end{frame}
+
+\section{Introduction}
+\tocss
+\subsection{Le contexte}
+\begin{frame}{\secname : \subsecname}
+    \begin{itemize}
+        \item Canvas fut inventé par Apple pour Safari et Dashboard\footnote{On doit son existence à son absorption progressive. Le WhatWG a choisi de l’intégrer à HTML 5.};
+        \item Figures de proue de HTML 5 \lstinline[language=html]!<canvas>!;
+        \item API de dessin 2D, 3D;
+        \item Alternative sérieuse et puissante à Flash ou Java;
+    \end{itemize}
+\end{frame}
+
+\subsection{Possibilités}
+\begin{frame}{\secname : \subsecname}
+    Parmi les possibilités offertes figurent :
+    \begin{itemize}
+        \item des méthodes de tracé de formes géométriques (cercles, rectangles...) ;
+        \item des méthodes de tracé de polygones ;
+        \item des méthodes de choix de styles de couleurs et de remplissages ;
+        \item des méthodes de tracé de texte ;
+        \item des méthodes d’import et de manipulation d’images ;
+        \item des méthodes de transformation (échelle, rotation, déplacement) qui affectent
+              toute la matrice.
+    \end{itemize}
+\end{frame}
+
+\subsection{Usages}
+\begin{frame}{\secname : \subsecname}
+    Les usages de canvas sont multiples :
+    \begin{itemize}
+        \item Affichage de graphiques générés dynamiquement à partir de données variables;
+        \item Création de jeux;
+        \item Édition d’images et de photos en ligne;
+        \item Effets cosmétiques.
+    \end{itemize}
+\end{frame}
+\section{L’élément <canvas>}
+\tocss
+\subsection{Zone de dessin}
+\begin{frame}{\secname : \subsecname}
+    \lstinputlisting[language=html, title=Une zone de dessin canvas]{./exemples/canvas1.html}
+\end{frame}
+\begin{frame}{\secname : \subsecname}
+    \begin{itemize}
+        \item \lstinline[language=sql]!<canvas>! est un élément similaire à \lstinline[language=sql]!<img>! et ne nécessite pas à tout prix de balise de fermeture.
+        \item Dans la famille Mozilla, le choix de pouvoir fournir du contenu alternatif (facultatif, entre les deux balises) impose un fonctionnement avec une balise de fermeture.
+        \item Cette solution fonctionne également sous WebKit.\footnote{WebKit ignorera simplement cette balise.}
+    \end{itemize}
+\end{frame}
+
+\subsection{L’aide de JavaScript}
+\begin{frame}{\secname : \subsecname}
+    Quelques appels de fonction suffisent pour dessiner
+    \lstinputlisting[language=JavaScript, title=Un simple rectangle rouge.]{./exemples/canvas1.js}
+\end{frame}
+
+\section{Coordonnées}
+\tocss
+\subsection{Un système}
+\begin{frame}{\secname : \subsecname}
+    \begin{itemize}
+        \item Les coordonnées sont définies dans un système cartésien;
+        \item Débutent dans le coin supérieur gauche de la zone à $(0,0)$;
+        \item Toutes les valeurs sont exprimées en pixels;
+        \item Deux axes : horizontal $(x)$ et vertical $(y)$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{center}
+        \includegraphics{./img/Coordonnées.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    Sauf que...
+    \begin{center}
+        \includegraphics{./img/Coordonnées2.jpg}
+    \end{center}
+\end{frame}
+
+\begin{frame}{\secname : \subsecname}
+    \begin{quote}
+        Il ne reste plus qu’à découvrir l’ensemble des méthodes de dessin décrit dans la spécification.
+    \end{quote}
+\end{frame}
+
+
+\end{document}
